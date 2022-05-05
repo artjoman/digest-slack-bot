@@ -50,7 +50,7 @@ model.Message.find({ broadcasted: { $ne: true } }).sort({ votes: -1 }).limit(LIM
       const ids = messages.map(m => m.id);
 
       // prevent a message from being digested twice
-      model.Message.update({ id: { $in : ids } }, { $set: { broadcasted: true } }, { multi: true }, (err, res) => {
+      model.Message.updateMany({ id: { $in : ids } }, { $set: { broadcasted: true } }, { multi: true }, (err, res) => {
         err && console.error(err);
       });
     }
