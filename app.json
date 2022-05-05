@@ -7,7 +7,6 @@
     "slack"
   ],
   "addons": [
-    "scheduler:standard"
   ],
   "scripts": {
     "start": "node index.js"
